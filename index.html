@@ -1,148 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fincare</title>
+    <title>Fincare - Responsive</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=bubble_chart" />
-    <style>
-
-    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=bubble_chart" />
 </head>
 
 <body class="bg-gray-300 text-gray-800 font-sans">
-    <div class="flex min-h-screen">
-        <aside class="w-64 bg-white/90 backdrop-blur-sm p-6 flex flex-col justify-between rounded-xl m-3 sticky">
+    <div class="flex min-h-screen flex-col lg:flex-row">
+        
+        <!-- Mobile Menu Button (visible only on mobile) -->
+
+
+        <!-- Sidebar - Responsive -->
+        <aside id="sidebar" class="
+            fixed lg:static inset-0 z-40 
+            transform -translate-x-full lg:translate-x-0
+            transition-transform duration-300 ease-in-out
+            w-64 bg-white/90 backdrop-blur-sm p-6 
+            flex flex-col justify-between rounded-xl 
+            m-0 lg:m-3 lg:sticky lg:top-0 lg:h-screen
+        ">
             <div>
-                <h1 class="text-2xl font-bold mb-10"><span class="material-symbols-outlined">bubble_chart</span>Fincare
+                
+                <h1 class="text-2xl font-bold mb-10 flex items-center gap-2">
+                    <span class="material-symbols-outlined">bubble_chart</span>
+                    Fincare
                 </h1>
 
-                <nav class="space-y-3">
-                    <a href="#"
-                        class="flex items-center space-x-3 bg-gray-900 text-white px-3 py-3 rounded-lg font-semibold">
-                        <span></span><span>Dashboard</span>
+                <nav class="space-y-3 pt-8">
+                    <a href="#" class="flex items-center space-x-3 bg-gray-900 text-white px-3 py-3 rounded-lg font-semibold ">
+                        <span>Dashboard</span>
                     </a>
                     <a href="#" class="flex items-center space-x-3 text-gray-700 hover:text-gray-900 px-3 py-2">
-                        <span></span><span>Spending</span>
+                        <span>Spending</span>
                     </a>
                     <a href="#" class="flex items-center space-x-3 text-gray-700 hover:text-gray-900 px-3 py-2">
-                        <span></span><span>Income</span>
+                        <span>Income</span>
                     </a>
                     <a href="#" class="flex items-center space-x-3 text-gray-700 hover:text-gray-900 px-3 py-2">
-                        <span></span><span>Analytics</span>
+                        <span>Analytics</span>
                     </a>
                     <a href="#" class="flex items-center space-x-3 text-gray-700 hover:text-gray-900 px-3 py-2">
-                        <span></span><span>Budget Planner</span>
+                        <span>Budget Planner</span>
                     </a>
                 </nav>
             </div>
 
             <div class="space-y-3">
-                <a href="#" class="text-gray-600 hover:text-gray-900">Support</a>
-                <a href="#" class="text-gray-600 hover:text-gray-900">Settings</a>
-                <a href="#" class="text-gray-600 hover:text-gray-900">Log Out</a>
+                <a href="#" class="block text-gray-600 hover:text-gray-900">Support</a>
+                <a href="#" class="block text-gray-600 hover:text-gray-900">Settings</a>
+                <a href="#" class="block text-gray-600 hover:text-gray-900">Log Out</a>
             </div>
         </aside>
-        <main class="flex-1 p-5">
-            <div class="flex justify-around items-center mb-10 bg-white/90 p-3  rounded-xl">
 
+        <!-- Main Content -->
+        <main class="flex-1 p-3 md:p-5 pt-16 lg:pt-5">
 
-                <div class="flex items-center space-x-70">
-                    <button class="border px-3 py-1 rounded-lg text-sm">EN </button>
-                    <div class="bg-gray-300 px-3 py-1 rounded-lg text-sm">June 12, 2025</div>
-
-                    <div class="flex items-center space-x-2">
-                        <img src="imgs/dp.jpg" class="w-10 h-10 rounded-full" alt="">
-                        <div>
-                            <p class="font-medium">Ethan Carter</p>
-                            <p class="text-xs text-gray-500">plus</p>
-                        </div>
+            
+            
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6 bg-white/90 p-4 rounded-xl">
+                                    <button id="menuToggle" class="lg:hidden  bg-gray-300 px-2 rounded-lg shadow-lg z-50">
+            <span class="material-symbols-outlined">=</span>
+        </button>
+                <button class="border px-3 py-1 rounded-lg text-sm">EN</button>
+                <div class="bg-gray-300 px-3 py-1 rounded-lg text-sm whitespace-nowrap">June 12, 2025</div>
+                
+                <div class="flex items-center space-x-2">
+                    <img src="imgs/dp.jpg" class="w-10 h-10 rounded-full" alt="Profile">
+                    <div>
+                        <p class="font-medium">Ethan Carter</p>
+                        <p class="text-xs text-gray-500">plus</p>
                     </div>
                 </div>
             </div>
 
-            <div class="text-2xl font-semibold">Hi Ethan, here’s your summary</div>
-            <div class="grid grid-cols-3 grid-rows-2  gap-6 mt-10 bg-blue-300 p-5 rounded-xl">
+         
+            <div class="text-xl md:text-2xl font-semibold mb-6">Hi Ethan, here's your summary</div>
 
-                <div class="bg-white/90 backdrop-blur-xl p-12 rounded-2xl shadow-sm row-span-2 ">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 bg-blue-300 p-4 md:p-5 rounded-xl">
+
+               
+                <div class="bg-white/90 backdrop-blur-xl p-6 md:p-12 rounded-2xl shadow-sm md:col-span-2 lg:col-span-1 lg:row-span-2">
                     <h2 class="font-semibold mb-4">Expenses by Field</h2>
-
                     <div class="space-y-4 text-sm">
                         <div>
                             <div class="flex justify-between"><span>Rent/Housing</span><span>35%</span></div>
-                            <div class="h-4 bg-green-300 rounded-full w-[35%]"></div>
+                            <div class="h-3 md:h-4 bg-green-300 rounded-full w-[35%]"></div>
                         </div>
                         <div>
                             <div class="flex justify-between"><span>Food & Groceries</span><span>20%</span></div>
-                            <div class="h-4 bg-blue-300 rounded-full w-[20%]"></div>
+                            <div class="h-3 md:h-4 bg-blue-300 rounded-full w-[20%]"></div>
                         </div>
                         <div>
                             <div class="flex justify-between"><span>Transport</span><span>15%</span></div>
-                            <div class="h-4 bg-purple-300 rounded-full w-[15%]"></div>
+                            <div class="h-3 md:h-4 bg-purple-300 rounded-full w-[15%]"></div>
                         </div>
                         <div>
                             <div class="flex justify-between"><span>Health</span><span>12%</span></div>
-                            <div class="h-4 bg-red-300 rounded-full w-[12%]"></div>
+                            <div class="h-3 md:h-4 bg-red-300 rounded-full w-[12%]"></div>
                         </div>
                         <div>
                             <div class="flex justify-between"><span>Shopping</span><span>10%</span></div>
-                            <div class="h-4 bg-yellow-300 rounded-full w-[10%]"></div>
+                            <div class="h-3 md:h-4 bg-yellow-300 rounded-full w-[10%]"></div>
                         </div>
                         <div>
                             <div class="flex justify-between"><span>Entertainment</span><span>17%</span></div>
-                            <div class="h-4 bg-pink-300 rounded-full w-[17%]"></div>
+                            <div class="h-3 md:h-4 bg-pink-300 rounded-full w-[17%]"></div>
                         </div>
                         <div>
                             <div class="flex justify-between"><span>Other</span><span>2%</span></div>
-                            <div class="h-4 bg-gray-500 rounded-full w-[2%]"></div>
+                            <div class="h-3 md:h-4 bg-gray-500 rounded-full w-[2%]"></div>
                         </div>
                     </div>
                 </div>
+
                 <div class="bg-white/70 backdrop-blur-xl p-6 rounded-2xl shadow-sm flex flex-col justify-center items-center text-center">
-          <h2 class="font-semibold mb-3">Expense / Income</h2>
-          <button class="bg-gray-900 text-white px-6 py-2 rounded-lg flex items-center space-x-2">
-            <span>Add Transaction</span>
-            <span class="text-xl">＋</span>
-          </button>
-          <p class="text-gray-500 text-sm mt-3">Add each transaction — it only takes a few seconds</p>
-        </div>
-        <div class="bg-white/70 backdrop-blur-xl p-6 rounded-2xl shadow-sm">
-          <h2 class="font-semibold mb-2">Spending Limits</h2>
-          <p class="text-sm text-gray-500 mb-4">Month-over-month spending overview</p>
+                    <h2 class="font-semibold mb-3">Expense / Income</h2>
+                    <button class="bg-gray-900 text-white px-6 py-2 rounded-lg flex items-center space-x-2">
+                        <span>Add Transaction</span>
+                        <span class="text-xl">＋</span>
+                    </button>
+                    <p class="text-gray-500 text-sm mt-3">Add each transaction — it only takes a few seconds</p>
+                </div>
 
-          <div class="flex space-x-2 items-end h-32 mb-3">
-            <div class="w-6 bg-blue-300 h-[40%] rounded"></div>
-            <div class="w-6 bg-yellow-300 h-[70%] rounded"></div>
-            <div class="w-6 bg-purple-300 h-[50%] rounded"></div>
-            <div class="w-6 bg-pink-300 h-[80%] rounded"></div>
-            <div class="w-6 bg-green-300 h-[60%] rounded"></div>
-          </div>
+                <div class="bg-white/70 backdrop-blur-xl p-6 rounded-2xl shadow-sm">
+                    <h2 class="font-semibold mb-2">Spending Limits</h2>
+                    <p class="text-sm text-gray-500 mb-4">Month-over-month spending overview</p>
+                    <div class="flex space-x-2 items-end h-32 mb-3">
+                        <div class="w-6 bg-blue-300 h-[40%] rounded"></div>
+                        <div class="w-6 bg-yellow-300 h-[70%] rounded"></div>
+                        <div class="w-6 bg-purple-300 h-[50%] rounded"></div>
+                        <div class="w-6 bg-pink-300 h-[80%] rounded"></div>
+                        <div class="w-6 bg-green-300 h-[60%] rounded"></div>
+                    </div>
+                    <p class="text-gray-500 text-xs">June Spendings $2000 / $5000</p>
+                </div>
 
-          <p class="text-gray-500 text-xs">June Spendings $2000 / $5000</p>
-        </div>
+       
+                <div class="md:col-span-2 lg:col-span-2 bg-white/70 backdrop-blur-xl p-6 rounded-2xl shadow-sm">
+                    <h2 class="font-semibold mb-4">Income</h2>
+                    <div class="w-full h-40 bg-gradient-to-t from-green-200 to-green-50 rounded-lg flex flex-col justify-center items-center">
+                        <div class="text-green-700 text-2xl font-bold">$5330.76</div>
+                        <div class="text-green-500 text-sm font-medium">+3.4%</div>
+                        <p class="text-xs text-gray-400 mt-1">12 June 00:00</p>
+                    </div>
+                </div>
 
-        <div class="col-span-2 bg-white/70 backdrop-blur-xl p-6 rounded-2xl shadow-sm">
-          <h2 class="font-semibold mb-4">Income</h2>
-          <div class="w-full h-40 bg-gradient-to-t from-green-200 to-green-50 rounded-lg flex flex-col justify-center items-center">
-            <div class="text-green-700 text-2xl font-bold">$5330.76</div>
-            <div class="text-green-500 text-sm font-medium">+3.4%</div>
-            <p class="text-xs text-gray-400 mt-1">12 June 00:00</p>
-          </div>
+        
+                <div class="bg-white/70 backdrop-blur-xl p-6 rounded-2xl shadow-sm">
+                    <h2 class="font-semibold mb-4">Recent Transactions</h2>
+                    <div class="text-lg font-semibold text-red-500">-150$</div>
+                    <p class="text-gray-600 text-sm">Groceries</p>
+                    <p class="text-xs text-gray-500 mt-2">Transaction ID: 73945193</p>
+                </div>
             </div>
-            <div class="bg-white/70 backdrop-blur-xl p-6 rounded-2xl shadow-sm">
-          <h2 class="font-semibold mb-4">Recent Transactions</h2>
-          <div class="text-lg font-semibold text-red-500">-150$</div>
-          <p class="text-gray-600 text-sm">Groceries</p>
-          <p class="text-xs text-gray-500 mt-2">Transaction ID: 73945193</p>
-        </div>
         </main>
     </div>
 
 
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
 
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+        });
+
+
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth < 1024 && 
+                !sidebar.contains(e.target) && 
+                !menuToggle.contains(e.target) &&
+                !sidebar.classList.contains('-translate-x-full')) {
+                sidebar.classList.add('-translate-x-full');
+            }
+        });
+    </script>
 </body>
-
 </html>
