@@ -14,6 +14,9 @@ const transactionForm = document.getElementById('transactionForm');
 
 const amountInput = document.getElementById('amountInput');
 
+const dashboardView = document.getElementById('dashboardView');
+const spendingNav = document.getElementById('spendingNav');
+
 // expense field array object
 
 const expenseData = [
@@ -141,3 +144,8 @@ expenseData.forEach((expense)=>{
 });
 
 expenseListContainer.innerHTML = htmlContent;
+
+
+spendingNav.addEventListener('click' ,()=>{
+    dashboardView.classList.add('hidden');
+});

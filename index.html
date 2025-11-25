@@ -33,11 +33,11 @@
                 </h1>
 
                 <nav class="space-y-3 pt-8">
-                    <a href="#"
+                    <a href="#" id="dashboardNav"
                         class="flex items-center space-x-3 bg-gray-900 text-white px-3 py-3 rounded-lg font-semibold ">
                         <span>Dashboard</span>
                     </a>
-                    <a href="spending.html"
+                    <a href="#" id="spendingNav"
                         class="flex items-center space-x-3 text-gray-700 hover:text-gray-900 px-3 py-2">
                         <span>Spending</span>
                     </a>
@@ -82,8 +82,10 @@
                 </div>
             </div>
 
-
-            <div class="text-xl md:text-2xl font-semibold mb-6">Hi Ethan, here's your summary</div>
+        <div id="dashboardView">
+                <div class="text-xl md:text-2xl font-semibold mb-6">Hi Ethan, here's your summary</div>
+                <div class="grid grid-cols-1 md:gap-6 bg-blue-300 p-4 md:p-5 rounded-xl"></div>
+            
 
             <div
                 class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 bg-blue-300 p-4 md:p-5 rounded-xl">
@@ -206,6 +208,7 @@
                     </div>
                     
                 </div>
+              </div>
             </div>
         </main>
     </div>
