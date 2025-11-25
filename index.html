@@ -92,8 +92,8 @@
                 <div
                     class="bg-white/90 backdrop-blur-xl p-6 md:p-12 rounded-2xl shadow-sm md:col-span-2 lg:col-span-1 lg:row-span-2">
                     <h2 class="font-semibold mb-4">Expenses by Field</h2>
-                    <div class="space-y-4 text-sm">
-                        <div>
+                    <div id="expenseListContainer" class="space-y-4 text-sm">
+                        <!-- <div>
                             <div class="flex justify-between"><span>Rent/Housing</span><span>35%</span></div>
                             <div class="h-3 md:h-4 bg-green-300 rounded-full w-[35%]"></div>
                         </div>
@@ -120,7 +120,7 @@
                         <div>
                             <div class="flex justify-between"><span>Other</span><span>2%</span></div>
                             <div class="h-3 md:h-4 bg-gray-500 rounded-full w-[2%]"></div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
@@ -161,15 +161,13 @@
                             </label>
 
                             <button type="submit" id="submitTransactionBtn"
-                                class="w-full bg-blue-400 text-white font-semibold py-2 rounded-lg hover:bg-green-700 transition">
+                                class="w-full bg-blue-400 text-white font-semibold py-2 rounded-lg hover:bg-blue-700 transition duration-300 cursor-pointer">
                                 Submit Transaction
                             </button>
                         </form>
 
                         <button id="closeModalBtn"
-                            class="mt-4 bg-red-500 text-white px-4 py-2 rounded-lg">Close</button>
-                        <button id="closeModalBtn"
-                            class="mt-4 bg-red-500 text-white px-4 py-2 rounded-lg">Close</button>
+                            class="mt-4 bg-gray-200  hover:text-white px-4 py-2 rounded-lg cursor-pointer hover:bg-red-700 transition duration-300">Close</button>
                     </div>
                 </div>
 
