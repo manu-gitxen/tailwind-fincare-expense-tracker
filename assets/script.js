@@ -17,6 +17,13 @@ const amountInput = document.getElementById('amountInput');
 const dashboardView = document.getElementById('dashboardView');
 const spendingNav = document.getElementById('spendingNav');
 
+// spending view 
+const spendingView = document.getElementById('spendingView');
+
+const incomeAmountDisplay = document.getElementById('incomeAmountDisplay');
+
+const incomePercentage = document.getElementById('incomePercentage');
+
 // expense field array object
 
 const expenseData = [
@@ -110,6 +117,8 @@ transactionForm.addEventListener('submit', (e) => {
  
     transactionsArray.push(newTransaction); 
 
+    updateIncomeCard()
+
     
     
     const colorClass = newTransaction.type === 'expense' ? 'text-red-500' : 'text-green-500';
@@ -146,6 +155,48 @@ expenseData.forEach((expense)=>{
 expenseListContainer.innerHTML = htmlContent;
 
 
-spendingNav.addEventListener('click' ,()=>{
-    dashboardView.classList.add('hidden');
+
+
+dashboardNav.addEventListener('click', (e)=>{
+    e.preventDefault()
+    dashboardView.classList.remove('hidden');
+    spendingView.classList.add('hidden');
+
+    dashboardNav.classList.add('bg-gray-900','text-white');
+    dashboardNav.classList.remove('text-gray-700');
+    spendingNav.classList.add('text-gray-700','hover:text-gray-900');
+    spendingNav.classList.remove('bg-gray-900','text-white');
+})
+
+
+// view spending tab
+spendingNav.addEventListener('click', (e) => {
+    e.preventDefault()
+    // 1. Hide the Dashboard View
+    dashboardView.classList.add('hidden'); 
+
+    dashboardNav.classList.remove('bg-gray-900','text-white');
+    dashboardNav.classList.add('text-gray-700');
+    spendingNav.classList.remove('text-gray-700','hover:text-gray-900');
+    spendingNav.classList.add('bg-gray-900','text-white');
+    
+    // 2. Show the Spending View (The line we need!)
+    spendingView.classList.remove('hidden'); 
 });
+
+// Function to calculate and display total income
+const updateIncomeCard = () => {
+    //  total income using reduce
+    const totalIncome = transactionsArray.reduce((total, transaction) => {
+        // Only include transactions marked as 'income'
+        return transaction.type === 'income' ? total + transaction.amount : total;
+    }, 0); 
+
+    
+    
+    incomeAmountDisplay.textContent = `$${totalIncome.toFixed(2)}`;
+    incomePercentage.textContent=`+${totalIncome/10000*100}`;
+
+};
+
+

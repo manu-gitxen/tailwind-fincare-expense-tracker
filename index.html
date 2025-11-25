@@ -38,16 +38,16 @@
                         <span>Dashboard</span>
                     </a>
                     <a href="#" id="spendingNav"
-                        class="flex items-center space-x-3 text-gray-700 hover:text-gray-900 px-3 py-2">
+                        class="flex items-center space-x-3 text-gray-700 hover:text-gray-900 px-3 py-2 rounded-lg font-semibold">
                         <span>Spending</span>
                     </a>
-                    <a href="#" class="flex items-center space-x-3 text-gray-700 hover:text-gray-900 px-3 py-2">
+                    <a href="#" class="flex items-center space-x-3 text-gray-700 hover:text-gray-900 px-3 py-2 rounded-lg font-semibold">
                         <span>Income</span>
                     </a>
-                    <a href="#" class="flex items-center space-x-3 text-gray-700 hover:text-gray-900 px-3 py-2">
+                    <a href="#" class="flex items-center space-x-3 text-gray-700 hover:text-gray-900 px-3 py-2 rounded-lg font-semibold">
                         <span>Analytics</span>
                     </a>
-                    <a href="#" class="flex items-center space-x-3 text-gray-700 hover:text-gray-900 px-3 py-2">
+                    <a href="#" class="flex items-center space-x-3 text-gray-700 hover:text-gray-900 px-3 py-2 rounded-lg font-semibold">
                         <span>Budget Planner</span>
                     </a>
                 </nav>
@@ -84,7 +84,7 @@
 
         <div id="dashboardView">
                 <div class="text-xl md:text-2xl font-semibold mb-6">Hi Ethan, here's your summary</div>
-                <div class="grid grid-cols-1 md:gap-6 bg-blue-300 p-4 md:p-5 rounded-xl"></div>
+                <!-- <div class="grid grid-cols-1 md:gap-6 bg-blue-300 p-4 md:p-5 rounded-xl"></div> -->
             
 
             <div
@@ -191,8 +191,8 @@
                     <h2 class="font-semibold mb-4">Income</h2>
                     <div
                         class="w-full h-40 bg-gradient-to-t from-green-200 to-green-50 rounded-lg flex flex-col justify-center items-center">
-                        <div class="text-green-700 text-2xl font-bold">$5330.76</div>
-                        <div class="text-green-500 text-sm font-medium">+3.4%</div>
+                        <div id="incomeAmountDisplay" class="text-green-700 text-2xl font-bold">$0.76</div>
+                        <div id="incomePercentage" class="text-green-500 text-sm font-medium">+0.4%</div>
                         <p class="text-xs text-gray-400 mt-1">12 June 00:00</p>
                     </div>
                 </div>
@@ -210,6 +210,9 @@
                 </div>
               </div>
             </div>
+            <div id="spendingView" class="hidden p-4 md:p-6 bg-white/90 rounded-xl">
+    <h2 class="text-2xl font-bold mb-4">Detailed Spending History</h2>
+    </div>
         </main>
     </div>
 
