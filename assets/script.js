@@ -52,6 +52,10 @@ const expenseData = [
 
 ];
 
+// for the recent transaction
+
+let transactionsArray = [];
+
 // foreach loop 
 let htmlContent = '';
 
@@ -85,22 +89,43 @@ closeModalBtn.addEventListener('click', () => {
 });
 
 transactionForm.addEventListener('submit', (e) => {
-    e.preventDefault(); //  Stops the page from refreshing!
+    e.preventDefault(); 
 
-    const amountInput = document.getElementById('amountInput').value;
+    const amount = parseFloat(document.getElementById('amountInput').value); 
     const type = document.getElementById('typeInput').value;
     const category = document.getElementById('categoryInput').value;
 
+    const transactionId = Math.floor(Math.random() * 90000000) + 10000000;
+
     const newTransaction = {
-    amount: amountInput, 
-    type,         
-    category   
-};
+        amount,
+        type,
+        category,
+        id: transactionId
+    };
 
- transactionForm.reset();
- transactionModal.classList.add('hidden')
+ 
+    transactionsArray.push(newTransaction); 
 
+    
+    
+    const colorClass = newTransaction.type === 'expense' ? 'text-red-500' : 'text-green-500';
+    const sign = newTransaction.type === 'expense' ? '-' : '+';
 
+    const newTransactionHTML = `
+        <div class="py-2">
+            <div class="text-lg font-semibold ${colorClass}">${sign}${newTransaction.amount.toFixed(2)}$</div>
+            <p class="text-gray-600 text-sm">${newTransaction.category}</p>
+            <p class="text-xs text-gray-500 mt-1">Transaction ID: ${newTransaction.id}</p>
+        </div>
+    `;
+
+    // 3. DISPLAY: Overwrite the container to show ONLY the newest transaction
+    recentTransactionsContainer.innerHTML = newTransactionHTML; 
+
+    // 4. CLEANUP
+    transactionForm.reset(); 
+    transactionModal.classList.add('hidden'); 
 });
 
 expenseData.forEach((expense)=>{
