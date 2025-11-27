@@ -24,6 +24,9 @@ const incomeAmountDisplay = document.getElementById('incomeAmountDisplay');
 
 const incomePercentage = document.getElementById('incomePercentage');
 
+// transaction history storing
+const transactionTableBody = document.getElementById('transactionTableBody');
+
 // expense field array object
 
 const expenseData = [
@@ -182,6 +185,7 @@ spendingNav.addEventListener('click', (e) => {
     
     // 2. Show the Spending View (The line we need!)
     spendingView.classList.remove('hidden'); 
+    renderSpendingHistory()
 });
 
 // Function to calculate and display total income
@@ -197,6 +201,38 @@ const updateIncomeCard = () => {
     incomeAmountDisplay.textContent = `$${totalIncome.toFixed(2)}`;
     incomePercentage.textContent=`+${totalIncome/10000*100}`;
 
+};
+const renderSpendingHistory = () => {
+    // 1. CLEAR: Wipe out any existing rows from the table body
+    transactionTableBody.innerHTML = ''; 
+
+    // Initialize an empty string to hold all the new rows
+    let tableRowsHTML = '';
+
+    // 2. BUILD: Loop through every single item in the transaction history array
+    transactionsArray.forEach((transaction) => {
+        // Prepare the styling and sign based on the data
+        const colorClass = transaction.type === 'expense' ? 'text-red-500' : 'text-green-500';
+        const sign = transaction.type === 'expense' ? '-' : '+';
+        const date = new Date().toLocaleDateString(); // Gets the current date
+
+        // Build the HTML for one single table row (<tr>)
+        const rowHTML = `
+            <tr class="bg-white border-b hover:bg-gray-50">
+                <td class="px-6 py-4">${date}</td>
+                <td class="px-6 py-4">${transaction.category}</td>
+                <td class="px-6 py-4">${transaction.type}</td>
+                <td class="px-6 py-4 font-semibold ${colorClass}">${sign}${transaction.amount.toFixed(2)}$</td>
+                <td class="px-6 py-4">${transaction.id}</td>
+            </tr>
+        `;
+        
+        // Append the new row to the main string
+        tableRowsHTML += rowHTML;
+    });
+
+    // 3. INJECT: Insert the entire collection of rows into the table body
+    transactionTableBody.innerHTML = tableRowsHTML;
 };
 
 

@@ -211,8 +211,24 @@
               </div>
             </div>
             <div id="spendingView" class="hidden p-4 md:p-6 bg-white/90 rounded-xl">
-    <h2 class="text-2xl font-bold mb-4">Detailed Spending History</h2>
+    <h2 class="text-2xl font-bold mb-6">Full Transaction History</h2>
+
+    <div class="overflow-x-auto shadow-md sm:rounded-lg">
+        <table class="w-full text-sm text-left text-gray-500">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                <tr>
+                    <th scope="col" class="px-6 py-3">Date</th>
+                    <th scope="col" class="px-6 py-3">Category</th>
+                    <th scope="col" class="px-6 py-3">Type</th>
+                    <th scope="col" class="px-6 py-3">Amount</th>
+                    <th scope="col" class="px-6 py-3">ID</th>
+                </tr>
+            </thead>
+            <tbody id="transactionTableBody">
+                </tbody>
+        </table>
     </div>
+</div>
         </main>
     </div>
 
